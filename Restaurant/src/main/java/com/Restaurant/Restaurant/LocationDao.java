@@ -7,6 +7,8 @@ import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
+import com.google.common.collect.Multiset.Entry;
+
 
 @Component
 public class LocationDao {
@@ -23,13 +25,23 @@ public class LocationDao {
 		
 	}
 	
-	public Set getAddress(Integer restaurantId) {
+	public Location getAddress(Integer restaurantId) {
 		
 		if(locationMap.containsKey(restaurantId)){
-		
-		return (Set) locationMap.values();
+
+		for(Map.Entry<Integer, Location> entry:locationMap.entrySet()) {
+			return entry.getValue();
+		}
 	}
 		return null;
 	
+	}
+
+	public static Map<Integer, Location> getLocationMap() {
+		return locationMap;
+	}
+
+	public static void setLocationMap(Map<Integer, Location> locationMap) {
+		LocationDao.locationMap = locationMap;
 	}
 }

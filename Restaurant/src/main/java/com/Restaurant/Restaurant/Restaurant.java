@@ -3,7 +3,6 @@ package com.Restaurant.Restaurant;
 public class Restaurant {
 	private String name;
 	private Integer restaurantId;
-	
 	private Double rating;
 	private Integer priceRange;
 	
