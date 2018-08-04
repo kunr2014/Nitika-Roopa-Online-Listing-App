@@ -8,6 +8,7 @@ public class Location {
 	
 	private String Address;
 	private Integer ZipCode;
+	
 
 	public Integer getZipCode() {
 		return ZipCode;
