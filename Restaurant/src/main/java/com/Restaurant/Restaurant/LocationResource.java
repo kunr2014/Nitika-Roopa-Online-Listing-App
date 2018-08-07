@@ -4,28 +4,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.util.StringTokenizer;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LocationResource {
+	
+	
 	@Autowired
 	Location location;
 	String des;
 	String uriPath;
 	
+	//Find Distance
+	
+	//Find location by id
 	@GetMapping(path="/restaurants/location/{id}")
 	public  String getAddressResponse() throws IOException {
 		
-		//URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins=Vancouver+BC|Seattle&destinations=San+Francisco|Victoria+BC");
-		
-		//URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins=3446+gredell+pl+sanjose+ca&destinations=SanFrancisco");
 		LocationResource lr=new LocationResource();
 
 		URL url = new URL(lr.getDistance(1));
@@ -44,7 +43,8 @@ public class LocationResource {
 	}
 	
 	
-	//Hardcoaded source destination as home address
+	//Hardcoded source destination as home address need to change...
+	
 	public String getDistance(Integer restaurantId) {
 	LocationDao loDao=new LocationDao();
 	

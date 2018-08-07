@@ -7,14 +7,14 @@ import org.springframework.stereotype.Controller;
 public class Location {
 	
 	private String Address;
-	private Integer ZipCode;
+	private Long ZipCode;
 	
 
-	public Integer getZipCode() {
+	public Long getZipCode() {
 		return ZipCode;
 	}
 
-	public void setZipCode(Integer zipCode) {
+	public void setZipCode(Long zipCode) {
 		ZipCode = zipCode;
 	}
 
@@ -33,9 +33,9 @@ public class Location {
 		return "Location [Address=" + Address + ", ZipCode=" + ZipCode + "]";
 	}
 
-	public Location(String address, Integer zipCode) {
+	public Location(String address, long i) {
 		Address = address;
-		ZipCode = zipCode;
+		ZipCode = i;
 	}
 
 	public Location() {

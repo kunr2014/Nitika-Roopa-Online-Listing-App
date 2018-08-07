@@ -1,22 +1,30 @@
 package com.Restaurant.Restaurant;
 
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class Restaurant {
 	private String name;
+	private String type;
 	private Integer restaurantId;
 	private Double rating;
 	private Integer priceRange;
+	private Location location;
 	
 	public Restaurant() {
 		
 	}
 	//Parametrized Constructor
 	
-	public Restaurant(String name, Integer restaurantId, double rating,	Integer priceRange) {
-		
+	//public Restaurant(String name, Integer restaurantId, double rating,	Integer priceRange,String address,Integer zipcode) {
+	public Restaurant(String name, String type,Integer restaurantId, double rating,	Integer priceRange) {
 		this.name = name;
+		this.type=type;
 		this.restaurantId = restaurantId;
 		this.rating = rating;
 		this.priceRange = priceRange;
+		/*this.location.setAddress(address);
+		this.location.setZipCode(zipcode);*/
 	}
 	
 	// ToString Method
@@ -53,6 +61,22 @@ public class Restaurant {
 	}
 	public void setPriceRange(Integer priceRange) {
 		this.priceRange = priceRange;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	
